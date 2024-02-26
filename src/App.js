@@ -1,9 +1,20 @@
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Navbar from "./Components/navbar/Navbar";
+import Details from "./pages/Details/Details";
+import Favorites from "./pages/Favorites/Favorites";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <div className="min-h-screen p-6 bg-white text-gray-600 text-lg">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/recipe-item/:id" element={<Details />} />
+        </Routes>
+      </div>
     </div>
   );
 }
